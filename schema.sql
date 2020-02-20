@@ -5,6 +5,7 @@ CREATE DATABASE pointNclick;
 CREATE TABLE users(
     ID
     USER_NAME
+    characterName
     password
     currentroom
 )
