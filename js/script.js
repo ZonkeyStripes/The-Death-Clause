@@ -27,7 +27,7 @@ $(document).ready(function () {
         }
     });
 
-
+// user login
     $("#login").click(function(){
         let user = {};
 
