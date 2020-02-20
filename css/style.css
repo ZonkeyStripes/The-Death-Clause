@@ -17,7 +17,7 @@ body{
 
 .wrapper{
     width: 80%;
-    margin: 5% auto;
+    margin: 0 auto;
 
 }
 
@@ -33,6 +33,9 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.192);
+    padding: 2%;
+    width: 30%;
 }
 
 h1, h2, h3{
@@ -41,6 +44,7 @@ h1, h2, h3{
 
 h1{
     font-size: 25pt;
+    margin-top: 4%;
 }
 
 h2{
@@ -71,13 +75,20 @@ button{
     background-color: white;
     font-family: 'Courier Prime', monospace;
     padding: 0.5%;
-    margin-top: 2%;
+    margin-top: 16pt;
+    font-size: 12pt;
+}
+
+.newUser{
+    background-color: rgba(255, 255, 255, 0.192);
+    padding: 2%;
+
 }
 
 .newUser #username{
     margin-bottom: 2%;
 }
 
-.newUser #register{
+/* .newUser #register{
     margin-top: 5%;
-}
+} */
