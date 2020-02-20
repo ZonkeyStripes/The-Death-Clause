@@ -42,6 +42,11 @@ $(document).ready(function () {
                 console.log("user log in attempt", user);
                 //send back to index or give feedback that registered
                 //   location.reload();
+                if(!response){
+                    alert("login failed");
+                }else{
+                    console.log("logging in");
+                }
             }
         );
     });
