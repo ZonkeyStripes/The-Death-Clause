@@ -28,9 +28,12 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(function() {
+        console.log("success");
         res.redirect(307, "/");
+
       })
       .catch(function(err) {
+        console.log(err);
         res.status(401).json(err);
       });
   });
