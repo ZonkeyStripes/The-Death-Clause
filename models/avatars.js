@@ -1,5 +1,5 @@
 module.exports = function (sequelize, Datatypes){
-let avatars = sequelize.define("avatars",{
+let Avatar = sequelize.define("Avatar",{
     name: {
         type: Datatypes.STRING,
         allowNull: false,
@@ -13,4 +13,5 @@ let avatars = sequelize.define("avatars",{
         allowNull: false,
     }
 })
+return Avatar;
 }

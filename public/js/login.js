@@ -10,18 +10,18 @@ $(document).ready(function() {
       password: passwordInput.val().trim()
     };
 
-    if (!userData.email || !userData.password) {
+    if (!userData.Username || !userData.password) {
       return;
     }
 
-    loginUser(userData.email, userData.password);
+    loginUser(userData.Username, userData.password);
     emailInput.val("");
     passwordInput.val("");
   });
 
- function loginUser(email, password) {
+ function loginUser(Username, password) {
     $.post("/api/login", {
-      email: email,
+      Username: Username,
       password: password
     })
       .then(function() {

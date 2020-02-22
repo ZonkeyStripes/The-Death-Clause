@@ -6,21 +6,21 @@ $(document).ready(function() {
   signUpForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
-      email: emailInput.val().trim(),
+      Username: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
 
-    if (!userData.email || !userData.password) {
+    if (!userData.Username || !userData.password) {
       return;
     }
-    signUpUser(userData.email, userData.password);
+    signUpUser(userData.Username, userData.password);
     emailInput.val("");
     passwordInput.val("");
   });
 
-  function signUpUser(email, password) {
+  function signUpUser(Username, password) {
     $.post("/api/signup", {
-      email: email,
+      Username: Username,
       password: password
     })
       .then(function(data) {
