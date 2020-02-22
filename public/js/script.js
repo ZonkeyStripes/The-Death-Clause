@@ -11,39 +11,42 @@ $(document).ready(function () {
     //     strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
     //     typeSpeed: 40
     //   };
-      
+
     // let typed = new Typed('.element', options);
-    
+
     // register new user
+    // $(window).click(function(event){
+    //     console.log(event);
+    // })
+
     $("#register").click(function (event) {
-        event.preventDefault();
         let newUser = {};
 
-        newUser.username = $("#username").val().trim;
+        if ($("#username").val()) {
+            newUser.username = $("#username").val().trim();
+        }
 
         // validate passwords match
         if ($("#password").val() != $("#confirm").val()) {
             alert("Passwords do not match");
-            break;
+            return;
         } else {
 
             newUser.password = $("#password").val();
 
-            $.ajax("/api/register/", {
-                type: "POST",
-                data: newUser
-            }).then(
-                function () {
+            $.post("/api/register",
+                newUser,
+                function (data) {
                     console.log("user registered", newUser);
-                    //send back to index or give feedback that registered
-                    //   location.reload();
-                }
-            );
+                    console.log(data);
+                });
+
+
         }
     });
 
-// user login
-    $("#login").click(function(){
+    // user login
+    $("#login").click(function () {
         let user = {};
 
         user.username = $("#username").val().trim();
@@ -57,9 +60,9 @@ $(document).ready(function () {
                 console.log("user log in attempt", user);
                 //send back to index or give feedback that registered
                 //   location.reload();
-                if(!response){
+                if (!response) {
                     alert("login failed");
-                }else{
+                } else {
                     console.log("logging in");
                 }
             }
