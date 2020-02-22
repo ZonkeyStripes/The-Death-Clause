@@ -1,6 +1,7 @@
 DROP DATABASE pointNclick if EXISTS;
 CREATE DATABASE pointNclick;
 use pointNclick;
+
 CREATE TABLE test(
     ID int not null auto_increment,
     email varchar (100),
