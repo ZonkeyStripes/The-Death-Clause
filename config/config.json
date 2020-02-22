@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "rootpass",
+    "password": "compy386",
     "database": "pointnclick",
     "host": "127.0.0.1",
     "dialect": "mysql"
