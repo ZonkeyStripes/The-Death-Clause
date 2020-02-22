@@ -1,28 +1,11 @@
 DROP DATABASE pointNclick if EXISTS;
-
 CREATE DATABASE pointNclick;
-
-CREATE TABLE users(
-    ID
-    USER_NAME
-    characterName
-    password
-    currentroom
-)
-
-CREATE TABLE items(
-    id
-    NAMES
-    IMAGE
-)
-
-CREATE TABLE inventory(
-    id
-    user FK
-    item FK
-)
-
-CREATE TABLE rooms(
-    IDENTITY
-    NAME
-)
+use pointNclick;
+CREATE TABLE test(
+    ID int not null auto_increment,
+    email varchar (100),
+    USER_NAME varchar (30),
+    password varchar (30),
+    currentroom varchar (30),
+    PRIMARY KEY (id)
+);

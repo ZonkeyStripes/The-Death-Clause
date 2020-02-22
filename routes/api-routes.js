@@ -55,7 +55,6 @@ module.exports = function(app) {
       }else{
         res.send(false);
       }
-      
       // The user is not logged in, send back an empty object
   });
 };
