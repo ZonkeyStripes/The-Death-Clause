@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+}
+
+svg{
+    max-height: 95vh;
+    width: 95vw;
+    margin: 0 auto;
+}
