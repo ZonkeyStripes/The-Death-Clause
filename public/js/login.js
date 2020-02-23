@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // Getting references to our form and inputs
   var loginForm = $("form.login");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
@@ -6,7 +7,7 @@ $(document).ready(function() {
   loginForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
-      Username: emailInput.val().trim(),
+      email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
 
@@ -14,12 +15,13 @@ $(document).ready(function() {
       return;
     }
 
+   
     loginUser(userData.Username, userData.password);
     emailInput.val("");
     passwordInput.val("");
   });
 
- function loginUser(Username, password) {
+   function loginUser(Username, password) {
     $.post("/api/login", {
       Username: Username,
       password: password

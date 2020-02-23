@@ -7,12 +7,13 @@ $(document).ready(function() {
     event.preventDefault();
     var userData = {
       Username: emailInput.val().trim(),
-      password: passwordInput.val().trim()
+      Username: passwordInput.val().trim()
     };
 
     if (!userData.Username || !userData.password) {
       return;
     }
+
     signUpUser(userData.Username, userData.password);
     emailInput.val("");
     passwordInput.val("");
