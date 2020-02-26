@@ -68,3 +68,17 @@ svg{
     grid-column: 45;
     grid-row: 16;
 }
+
+.fiancee{
+    width: 7.5vw;
+
+    grid-column: 12;
+    grid-row: 17;
+}
+
+.brother{
+    width: 6.5vw;
+
+    grid-column: 17;
+    grid-row: 16;
+}
