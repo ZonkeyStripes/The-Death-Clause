@@ -88,3 +88,10 @@ svg{
     grid-column: 24;
     grid-row: 31;
 }
+
+.tito{
+    width: 7.5vw;
+
+    grid-column: 39;
+    grid-row: 22;
+}
