@@ -1,7 +1,9 @@
 *{
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 body{
@@ -21,6 +23,7 @@ svg{
     position: relative;
     max-height: 95vh;
     width: 95vw;
+    text-align: center;
 }
 
 .objects{
@@ -29,8 +32,8 @@ svg{
     left: 0;
 
     display: grid;
-    grid-template-columns: repeat(32, 1fr);
-    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(64, minmax(0, 1fr));
+    grid-template-rows: repeat(36, minmax(0, 1fr));
 
     max-height: 95vh;
     width: 95vw;
@@ -39,6 +42,14 @@ svg{
 
 .plant{
     width: 8vw;
-    grid-column: 27;
-    grid-row: 15;
+    grid-column: 50;
+    grid-row: 22;
+}
+
+.doorknob{
+    width: 3vw;
+    
+    grid-column: 56;
+    grid-row: 25;
+    transform: rotate(1deg);
 }
