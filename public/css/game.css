@@ -53,3 +53,11 @@ svg{
     grid-row: 25;
     transform: rotate(1deg);
 }
+
+.keypad{
+    width: 2.5vw;
+
+    grid-column: 10;
+    grid-row: 22;
+    transform: rotate(-2deg);
+}
