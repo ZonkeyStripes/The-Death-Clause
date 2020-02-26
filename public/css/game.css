@@ -82,3 +82,9 @@ svg{
     grid-column: 17;
     grid-row: 16;
 }
+
+.frank{
+    width: 27vw;
+    grid-column: 24;
+    grid-row: 31;
+}
