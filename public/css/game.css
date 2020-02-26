@@ -5,11 +5,40 @@
 }
 
 body{
+    padding-top: 2.5vh;
     text-align: center;
+    background-color: rgb(99, 99, 99);
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
 }
 
 svg{
     max-height: 95vh;
     width: 95vw;
     margin: 0 auto;
+}
+
+.room{
+    position: relative;
+    max-height: 95vh;
+    width: 95vw;
+}
+
+.objects{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+
+    max-height: 95vh;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+.plant{
+    width: 8vw;
+    grid-column: 27;
+    grid-row: 15;
 }
