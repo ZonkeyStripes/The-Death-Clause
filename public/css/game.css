@@ -61,3 +61,10 @@ svg{
     grid-row: 22;
     transform: rotate(-2deg);
 }
+
+.oneEye{
+    width: 7vw;
+
+    grid-column: 45;
+    grid-row: 16;
+}
