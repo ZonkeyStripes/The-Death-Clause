@@ -50,10 +50,12 @@ module.exports = function(app) {
       });
     }
   });
-};
 
-app.post("/api", function(req, res) {
-  db.User.fineOne({}).then(function(profilename) {
-    res.json(profilename);
+  app.get("/api/gob_data", function(req, res) {
+    db.Gob.findAll({}).then(function(data){
+      res.json(data);
+    })
   });
-})
+
+
+};

@@ -50,7 +50,8 @@ CREATE TABLE users(
 CREATE TABLE gameObjects (
     GobID int not null auto_increment PRIMARY KEY,
     name varchar(100),
-    description varchar (100)
+    description varchar (100),
+    IMAGE varchar (255)
 );
 
 CREATE TABLE dialog (
