@@ -2,8 +2,6 @@
     /* margin: 0;
     padding: 0; */
     box-sizing: border-box;
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
 
 body{
@@ -24,6 +22,7 @@ svg{
     max-height: 95vh;
     width: 95vw;
     text-align: center;
+    overflow: hidden;
 }
 
 .objects{
@@ -38,6 +37,16 @@ svg{
     max-height: 95vh;
     width: 95vw;
     margin: 0 auto;
+
+}
+
+.objects h1{
+    grid-row: 0;
+    grid-column: 11;
+    
+    font-family: 'Courier Prime', monospace;
+    color: white;
+    width: 20vw;
 }
 
 .plant{
