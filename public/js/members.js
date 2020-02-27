@@ -3,4 +3,9 @@ $(document).ready(function() {
     $(".member-name").text(data.Username);
     console.log("data received");
   });
+    // $.get("/api/gob_data").then(function(data){
+    //   for(let i = 0; data.length > i; i++) {
+        
+    //   }
+    // });
 });
