@@ -76,6 +76,7 @@ $(document).ready(function () {
                     alert("login failed");
                 } else {
                     console.log("logging in");
+                    window.location.replace("/game");
                 }
             }
         );
