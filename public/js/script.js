@@ -35,10 +35,12 @@ $(document).ready(function () {
             newUser.password = $("#password").val();
 
             $.post("/api/register",
-                newUser,
+                newUser).
+                then(
                 function (data) {
                     console.log("user registered", newUser);
                     console.log(data);
+                    window.location.replace("/login");
                 });
 
 
