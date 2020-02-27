@@ -40,7 +40,7 @@ svg{
 
 }
 
-.objects h1{
+.inventory{
     grid-row: 0;
     grid-column: 11;
     
@@ -103,4 +103,19 @@ svg{
 
     grid-column: 39;
     grid-row: 22;
+}
+
+.element{
+    display: none;
+    width: 45vw;
+    height: 30vh;
+    padding: 4vh 2vh;
+
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+    background-color: white;
+    border: 5px solid black;
+
+    grid-column: 18;
+    grid-row: 6;
 }
