@@ -1,0 +1,106 @@
+*{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 2.5vh;
+    text-align: center;
+    background-color: rgb(99, 99, 99);
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+}
+
+svg{
+    max-height: 95vh;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+.room{
+    position: relative;
+    max-height: 95vh;
+    width: 95vw;
+    text-align: center;
+    overflow: hidden;
+}
+
+.objects{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: repeat(64, minmax(0, 1fr));
+    grid-template-rows: repeat(36, minmax(0, 1fr));
+
+    max-height: 95vh;
+    width: 95vw;
+    margin: 0 auto;
+
+}
+
+.objects h1{
+    grid-row: 0;
+    grid-column: 11;
+    
+    font-family: 'Courier Prime', monospace;
+    color: white;
+    width: 20vw;
+}
+
+.plant{
+    width: 8vw;
+    grid-column: 50;
+    grid-row: 22;
+}
+
+.doorknob{
+    width: 3vw;
+    
+    grid-column: 56;
+    grid-row: 25;
+    transform: rotate(1deg);
+}
+
+.keypad{
+    width: 2.5vw;
+
+    grid-column: 10;
+    grid-row: 22;
+    transform: rotate(-2deg);
+}
+
+.oneEye{
+    width: 7vw;
+
+    grid-column: 45;
+    grid-row: 16;
+}
+
+.fiancee{
+    width: 7.5vw;
+
+    grid-column: 12;
+    grid-row: 17;
+}
+
+.brother{
+    width: 6.5vw;
+
+    grid-column: 17;
+    grid-row: 16;
+}
+
+.frank{
+    width: 27vw;
+    grid-column: 24;
+    grid-row: 31;
+}
+
+.tito{
+    width: 7.5vw;
+
+    grid-column: 39;
+    grid-row: 22;
+}

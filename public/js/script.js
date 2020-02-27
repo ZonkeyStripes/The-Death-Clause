@@ -52,21 +52,31 @@ $(document).ready(function () {
         user.username = $("#username").val().trim();
         user.password = $("#password").val();
 
-        $.ajax("/api/login/", {
-            type: "GET",
-            data: user
-        }).then(
-            function (response) {
-                console.log("user log in attempt", user);
-                //send back to index or give feedback that registered
-                //   location.reload();
-                if (!response) {
-                    alert("login failed");
-                } else {
-                    console.log("logging in");
-                }
-            }
-        );
+        console.log("login");
+        console.log(user);
+        
+        $.post("/api/login",
+        user,
+        function (data) {
+            console.log("user login", user);
+            console.log(data);
+        });
+
+        // $.ajax("/api/login/", {
+        //     type: "GET",
+        //     data: user
+        // }).then(
+        //     function (response) {
+        //         console.log("user log in attempt", user);
+        //         //send back to index or give feedback that registered
+        //         //   location.reload();
+        //         if (!response) {
+        //             alert("login failed");
+        //         } else {
+        //             console.log("logging in");
+        //         }
+        //     }
+        // );
     });
 
 });
