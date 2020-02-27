@@ -1,20 +1,20 @@
 module.exports = function(sequelize, DataTypes) {
-    var dialog = sequelize.define("dialog", {
+    let dialog = sequelize.define("dialog", {
     npc : {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
         },
     part : {
-        type: DataTypes.INT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         unique: true
     },
     dialect : {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true
     }
     });   
-    return Post;
+    return dialog;
   };

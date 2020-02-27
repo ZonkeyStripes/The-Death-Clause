@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var gameObject = sequelize.define("gameObject", {
+    let gameObject = sequelize.define("gameObject", {
     name : {
         type: DataTypes.STRING,
         allowNull: false,
@@ -11,5 +11,5 @@ module.exports = function(sequelize, DataTypes) {
         unique: true
     }
     });   
-    return Post;
+    return gameObject;
   };

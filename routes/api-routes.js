@@ -14,7 +14,7 @@ module.exports = function(app) {
   //   });
   // });
 
-  app.get("/api/game/gameObject",function(req,res){
+  app.get("/api/game",function(req,res){
     db.findAll({
       where: {
         name : name
@@ -24,7 +24,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/game/dialog",function(req,res){
+  app.get("/api/game",function(req,res){
     db.findAll({
       where: {
         dialog : dialog
@@ -41,7 +41,7 @@ module.exports = function(app) {
     })
       .then(function() {
         console.log("success");
-        res.redirect(307, "/");
+        res.redirect(307, "/api/game");
 
       })
       .catch(function(err) {
@@ -64,6 +64,7 @@ module.exports = function(app) {
       username: req.user.Username,
       id: req.user.id
     });
+    res.redirect(307, "/api/game");
   });
 
 };
