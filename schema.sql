@@ -1,7 +1,7 @@
 DROP DATABASE pointNclick if EXISTS;
 CREATE DATABASE pointNclick;
 use pointNclick;
-CREATE TABLE test(
+CREATE TABLE users (
     ID int not null auto_increment,
     email varchar (100),
     USER_NAME varchar (30),

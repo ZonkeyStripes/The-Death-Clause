@@ -4,6 +4,7 @@ $(document).ready(function() {
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
 
+  // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
@@ -15,19 +16,21 @@ $(document).ready(function() {
       return;
     }
 
-   
+    // If we have an email and password we run the loginUser function and clear the form
     loginUser(userData.Username, userData.password);
     emailInput.val("");
     passwordInput.val("");
   });
 
-   function loginUser(Username, password) {
+  // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+  function loginUser(Username, password) {
     $.post("/api/login", {
       Username: Username,
       password: password
     })
       .then(function() {
-        window.location.replace("/members");
+        window.location.replace("/game");
+        // If there's an error, log the error
       })
       .catch(function(err) {
         console.log(err);

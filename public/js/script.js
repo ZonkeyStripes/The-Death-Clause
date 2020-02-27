@@ -52,6 +52,16 @@ $(document).ready(function () {
         user.Username = $("#username").val().trim();
         user.password = $("#password").val();
 
+        console.log("login");
+        console.log(user);
+        
+        // $.post("/api/login",
+        // user,
+        // function (data) {
+        //     console.log("user login", user);
+        //     console.log(data);
+        // });
+
         $.ajax("/api/login/", {
             type: "POST",
             data: user
@@ -64,6 +74,7 @@ $(document).ready(function () {
                     alert("login failed");
                 } else {
                     console.log("logging in");
+                    window.location.replace("/game");
                 }
             }
         );
