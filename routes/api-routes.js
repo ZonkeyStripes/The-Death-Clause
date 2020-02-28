@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-const { Op } = require("sequelize");
+// const { Op } = require("sequelize");
 
 module.exports = function(app) {
 
@@ -11,7 +11,7 @@ module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
-      username: req.user.username,
+      Username: req.user.Username,
       id: req.user.id
     });
   });
@@ -26,18 +26,19 @@ module.exports = function(app) {
   // });
   
   app.post("/api/register",function(req, res) {
+    console.log(req.body);
     db.User.create({
-      username: req.body.Username,
+      Username: req.body.Username,
       password: req.body.password
     })
       .then(function() {
         console.log("success");
-        res.redirect(307, "/");
+        res.redirect("/");
 
       })
       .catch(function(err) {
         console.log(err);
-        // res.status(401).json(err);
+        res.status(401).json(err);
       });
   });
 
@@ -53,9 +54,10 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     console.log(req.body);
     res.json({
-      username: req.user.Username,
+      Username: req.user.Username,
       id: req.user.id
     });
+    res.redirect(307, "/api/game");
   });
 
 };
