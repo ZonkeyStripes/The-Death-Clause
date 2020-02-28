@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "rootpass",
-    "database": "deathClause",
+    "password": "password",
+    "database": "pointnclick",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

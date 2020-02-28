@@ -12,24 +12,24 @@ $(document).ready(function() {
       password: passwordInput.val().trim()
     };
 
-    if (!userData.email || !userData.password) {
+    if (!userData.Username || !userData.password) {
       return;
     }
 
     // If we have an email and password we run the loginUser function and clear the form
-    loginUser(userData.email, userData.password);
+    loginUser(userData.Username, userData.password);
     emailInput.val("");
     passwordInput.val("");
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-  function loginUser(email, password) {
+  function loginUser(Username, password) {
     $.post("/api/login", {
-      email: email,
+      Username: Username,
       password: password
     })
       .then(function() {
-        window.location.replace("/members");
+        window.location.replace("/game");
         // If there's an error, log the error
       })
       .catch(function(err) {
