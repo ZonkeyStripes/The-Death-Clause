@@ -27,7 +27,4 @@ module.exports = function(app) {
   app.get("/game", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/game.html"));
   });
-
-  
-
 };
