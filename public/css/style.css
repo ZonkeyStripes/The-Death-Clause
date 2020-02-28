@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    line-height: 1.5;
+}
+
+body{
+    font-family: 'Courier Prime', monospace;
+    text-align: center;
+    background-color: black;
+    color: white;
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+    /* downlaod bckgrd and re-host */
+}
+
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2%;
+}
+
+.reg, .log{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.192);
+    padding: 2%;
+    width: 30%;
+}
+
+h1, h2, h3{
+    font-weight: bolder;
+}
+
+h1{
+    font-size: 25pt;
+    margin-top: 4%;
+}
+
+h2{
+    font-size: large;
+}
+
+p, h3{
+    font-size: 16pt;
+    margin-top: 2%;
+}
+
+
+.newUser{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 14pt;
+}
+
+input, button{
+    margin: 0 auto;
+}
+
+button{
+    border: none;
+    background-color: white;
+    font-family: 'Courier Prime', monospace;
+    padding: 0.5%;
+    margin-top: 16pt;
+    font-size: 12pt;
+}
+
+.newUser{
+    background-color: rgba(255, 255, 255, 0.192);
+    padding: 2%;
+
+}
+
+.newUser #username{
+    margin-bottom: 2%;
+}
+
+/* .newUser #register{
+    margin-top: 5%;
+} */
