@@ -13,6 +13,7 @@ body{
     color: white;
     background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
     /* downlaod bckgrd and re-host */
+    overflow-x: hidden;
 }
 
 .wrapper{
@@ -21,9 +22,9 @@ body{
 
 }
 
-.register{
+/* .register{
     width: 80%;
-}
+} */
 
 .wrapper p{
     font-size: 14pt;
@@ -98,6 +99,5 @@ button{
     margin-bottom: 2%;
 }
 
-/* .newUser #register{
-    margin-top: 5%;
-} */
+
+/* media query breapoints here */
