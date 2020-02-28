@@ -1,0 +1,133 @@
+*{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    
+}
+
+body{
+    padding-top: 2.5vh;
+    text-align: center;
+    background-color: rgb(99, 99, 99);
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+    overflow: hidden;
+}
+
+
+.room{
+    position: relative;
+    height: calc((9 * 82vw) /16);
+    width: 82%;
+    text-align: center;
+    margin-left: calc(20% /2);
+    overflow: hidden;
+}
+
+svg{
+    height: calc((9 * 82vw) /16);
+    width: 100%;
+    /* margin-left: calc(20% /2); */
+}
+
+.objects{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: repeat(64, minmax(0, 1fr));
+    grid-template-rows: repeat(36, minmax(0, 1fr));
+
+    height: calc((9 * 82vw) /16);
+    width: 100%;
+    /* margin-left: calc(20% /2); */
+
+}
+
+.inventory{
+    grid-row: 1;
+    grid-column: 8;
+    
+    font-family: 'Courier Prime', monospace;
+    color: white;
+    width: 20vw;
+}
+
+.inventory h1{
+    font-size: 3vw;
+}
+
+.plant{
+    width: 8vw;
+    grid-column: 53;
+    grid-row: 22;
+}
+
+.doorknob{
+    width: 3vw;
+    
+    grid-column: 61;
+    grid-row: 25;
+    transform: rotate(1deg);
+}
+
+.keypad{
+    width: 2.5vw;
+
+    grid-column: 6;
+    grid-row: 22;
+    /* transform: rotate(-2deg); */
+}
+
+.oneEye{
+    width: 7vw;
+
+    grid-column: 47;
+    grid-row: 16;
+}
+
+.fiancee{
+    width: 7.5vw;
+
+    grid-column: 8;
+    grid-row: 17;
+}
+
+.brother{
+    width: 6.5vw;
+
+    grid-column: 14;
+    grid-row: 16;
+}
+
+.frank{
+    width: 27vw;
+    grid-column: 22;
+    grid-row: 31;
+}
+
+.tito{
+    width: 7.5vw;
+
+    grid-column: 39;
+    grid-row: 22;
+}
+
+.modal{
+    display: none;
+    width: 45vw;
+    height: 30vh;
+    padding: 4vh 2vh;
+
+    background-color: white;
+    border: 5px solid black;
+    font-family: 'Courier Prime', monospace;
+
+    grid-column: 15;
+    grid-row: 6;
+}
+
+.element{
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;   
+}
