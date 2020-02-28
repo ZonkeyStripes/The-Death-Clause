@@ -21,15 +21,15 @@ module.exports = function(app) {
       })
       .catch(function(err) {
         console.log(err);
-        res.status(401).json(err);
+        // res.status(401).json(err);
       });
   });
 
   // Route for logging user out
-  // app.get("/logout", function(req, res) {
-  //   req.logout();
-  //   res.redirect("/");
-  // });
+  app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
+  });
 
   // Route for getting some data about our user to be used client side
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
