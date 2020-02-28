@@ -2,6 +2,7 @@
     /* margin: 0;
     padding: 0; */
     box-sizing: border-box;
+    
 }
 
 body{
@@ -9,20 +10,23 @@ body{
     text-align: center;
     background-color: rgb(99, 99, 99);
     background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+    overflow: hidden;
 }
 
-svg{
-    max-height: 95vh;
-    width: 95vw;
-    margin: 0 auto;
-}
 
 .room{
     position: relative;
-    max-height: 95vh;
-    width: 95vw;
+    height: calc((9 * 82vw) /16);
+    width: 82%;
     text-align: center;
+    margin-left: calc(20% /2);
     overflow: hidden;
+}
+
+svg{
+    height: calc((9 * 82vw) /16);
+    width: 100%;
+    /* margin-left: calc(20% /2); */
 }
 
 .objects{
@@ -34,31 +38,35 @@ svg{
     grid-template-columns: repeat(64, minmax(0, 1fr));
     grid-template-rows: repeat(36, minmax(0, 1fr));
 
-    max-height: 95vh;
-    width: 95vw;
-    margin: 0 auto;
+    height: calc((9 * 82vw) /16);
+    width: 100%;
+    /* margin-left: calc(20% /2); */
 
 }
 
 .inventory{
-    grid-row: 0;
-    grid-column: 11;
+    grid-row: 1;
+    grid-column: 8;
     
     font-family: 'Courier Prime', monospace;
     color: white;
     width: 20vw;
 }
 
+.inventory h1{
+    font-size: 3vw;
+}
+
 .plant{
     width: 8vw;
-    grid-column: 50;
+    grid-column: 53;
     grid-row: 22;
 }
 
 .doorknob{
     width: 3vw;
     
-    grid-column: 56;
+    grid-column: 61;
     grid-row: 25;
     transform: rotate(1deg);
 }
@@ -66,35 +74,35 @@ svg{
 .keypad{
     width: 2.5vw;
 
-    grid-column: 10;
+    grid-column: 6;
     grid-row: 22;
-    transform: rotate(-2deg);
+    /* transform: rotate(-2deg); */
 }
 
 .oneEye{
     width: 7vw;
 
-    grid-column: 45;
+    grid-column: 47;
     grid-row: 16;
 }
 
 .fiancee{
     width: 7.5vw;
 
-    grid-column: 12;
+    grid-column: 8;
     grid-row: 17;
 }
 
 .brother{
     width: 6.5vw;
 
-    grid-column: 17;
+    grid-column: 14;
     grid-row: 16;
 }
 
 .frank{
     width: 27vw;
-    grid-column: 24;
+    grid-column: 22;
     grid-row: 31;
 }
 
@@ -105,17 +113,21 @@ svg{
     grid-row: 22;
 }
 
-.element{
+.modal{
     display: none;
     width: 45vw;
     height: 30vh;
     padding: 4vh 2vh;
 
-    font-family: 'Courier Prime', monospace;
-    font-weight: bold;
     background-color: white;
     border: 5px solid black;
+    font-family: 'Courier Prime', monospace;
 
-    grid-column: 18;
+    grid-column: 15;
     grid-row: 6;
+}
+
+.element{
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;   
 }

@@ -4,6 +4,13 @@ $(document).ready(function () {
     let inventory;
     let username;
 
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    if(vh>vw){
+        alert("This game is best played in landscape mode!");
+    }
+
     // retrieve inventory from database, save to localstorage
     $.get("/api/inventory", {
         user: username
@@ -14,6 +21,7 @@ $(document).ready(function () {
 
     $(".object").click(function (event) {
         let name = $(this).attr("data-id");
+        console.log(name);
         renderDialogue(name);
         $.get("/api/dialogue", {
             name: $(this).attr("data-id"),
@@ -31,7 +39,7 @@ $(document).ready(function () {
         // display: block
         
         $(".element").empty();
-        $(".element").css("display","block");
+        $(".modal").css("display","block");
 
         let options = {
             strings: [dialogue],
@@ -52,8 +60,8 @@ $(document).ready(function () {
         }
     }
 
-    $(".element").click(function(){
-        $(".element").css("display","none");
+    $(".modal").click(function(){
+        $(".modal").css("display","none");
     })
 
 
