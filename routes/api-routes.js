@@ -15,15 +15,7 @@ module.exports = function(app) {
       id: req.user.id
     });
   });
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
-  // app.post("/api/register", passport.authenticate("local"),function(req, res) {
-  //   res.json({
-  //     Username: req.user.Username,
-  //     id: req.user.id
-  //   });
-  // });
+ 
   
   app.post("/api/register",function(req, res) {
     console.log(req.body);
@@ -50,14 +42,30 @@ module.exports = function(app) {
 
   // Route for getting some data about our user to be used client side
 
-  app.post("/api/login/", passport.authenticate("local"), function(req, res) {
-    // Sending back a password, even a hashed password, isn't a good idea
-    console.log(req.body);
-    res.json({
-      Username: req.user.Username,
-      id: req.user.id
-    });
-    res.redirect(307, "/api/game");
+  // app.post("/api/login/", passport.authenticate("local"), function(req, res) {
+  //   // Sending back a password, even a hashed password, isn't a good idea
+  //   console.log(req.body);
+  //   res.json({
+  //     Username: req.user.Username,
+  //     id: req.user.id
+  //   });
+  //   res.redirect(307, "/api/game");
+  // });
+
+
+  app.get("/api/click", function(req, res) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
   });
+
 
 };

@@ -1,20 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
-    let dialog = sequelize.define("dialog", {
-    npc : {
+    let Dialog = sequelize.define("Dialog", {
+    text : {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
-        },
-    part : {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        unique: true
-    },
-    dialect : {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+        allowNull: false
+        }
+    }); 
+
+    Dialog.associate = function(models){
+        Dialog.hasMany(models.Composite);
     }
-    });   
-    return dialog;
+
+    return Dialog;
   };

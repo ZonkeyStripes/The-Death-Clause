@@ -10,6 +10,10 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         unique: true
     }
-    });   
+    });
+
+    gameObject.associate = function(models){
+        gameObject.hasMany(models.Inventory);
+    }
     return gameObject;
   };
