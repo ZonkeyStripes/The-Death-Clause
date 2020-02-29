@@ -54,10 +54,48 @@ svg{
     font-family: 'Courier Prime', monospace;
     color: white;
     width: 60vw;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1;
 }
 
+#invList{
+    display: flex;
+    margin: 0;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.item{
+    list-style: none;
+    text-indent: -9999px;
+    width: 20%;
+    height: 14vh;
+    border: 5px double grey;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
+li[data-show="note"]{
+    background-image: url("../images/note.svg");
+}
+
+li[data-show="frozen"]{
+    background-image: url("../images/frozencube.svg");
+}
+li[data-show="key"]{
+    background-image: url("../images/key.svg");
+}
+
+li[data-show="eyedrops"]{
+    background-image: url("../images/eyedrops.svg");
+}
+
+li[data-show="p_eyedrops"]{
+    background-image: url("../images/poison.svg");
+}
 
 .plant{
     width: 8vw;

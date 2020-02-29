@@ -141,19 +141,24 @@ $(document).ready(function () {
         if(act == 2){
             inventory.push("Note");
             $("#note").text("Code Note");
+            $("#note").attr("data-show","note");
         }else if(act == 3){
             inventory.push("Frozen_Key");
             $("#key").text("Frozen Key");
+            $("#key").attr("data-show","frozen");
         }else if(act == 4){
             inventory[2] = "Key";
             $("#key").empty();
             $("#key").text("Key");
+            $("#key").attr("data-show","key");
         }else if(act == 5){
             inventory.push("Eyedrops");
             $("#eyedrops").text("Eyedrops");
+            $("#eyedrops").attr("data-show","eyedrops");
         }else if(act == 6){
             inventory.push("P_Eyedrops");
             $("#p_eyedrops").text("P. Eyedrops");
+            $("#p_eyedrops").attr("data-show","p_eyedrops");
         }
 
 
