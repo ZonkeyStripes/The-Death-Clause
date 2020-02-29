@@ -40,10 +40,12 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
+  // MMAKE THIS NOT SEND BACK THE PASSWORD
   app.get("/api/load", function (req, res) {
-    let data = db.User.findOne({where:{Username: req.user.Username}});
-    console.log(data);
-    res.send(data);
+    console.log("load");
+    let data = db.User.findOne({where:{Username: req.user.Username}}).then(function(result){
+      res.send(result);
+    });
   });
 
 

@@ -6,12 +6,14 @@ $(document).ready(function () {
     const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
     $.get("/api/load", function(res){
-        if(res.isFulfilled){
-            inventory = res.inventory;
+        if(res.inventory){
+            inventory = JSON.parse(res.inventory);
+            console.log(inventory);
             updateInv();
             act = res.act;
-        }
         console.log(res);
+        }
+            
     })
 
     let dialogue = {
@@ -147,29 +149,47 @@ $(document).ready(function () {
     }
 
     function updateInv() {
+        $("#note").empty();
+        $("#note").attr("data-show","");
+        $("#key").empty();
+        $("#key").attr("data-show","");
+        $("#eyedrops").empty();
+        $("#eyedrops").attr("data-show","");
+        $("#p_eyedrops").empty();
+        $("#p_eyedrops").attr("data-show","");
+
         if(act == 2){
             inventory.push("Note");
-            $("#note").text("Code Note");
-            $("#note").attr("data-show","note");
         }else if(act == 3){
             inventory.push("Frozen_Key");
-            $("#key").text("Frozen Key");
-            $("#key").attr("data-show","frozen");
         }else if(act == 4){
             inventory[2] = "Key";
-            $("#key").empty();
-            $("#key").text("Key");
-            $("#key").attr("data-show","key");
         }else if(act == 5){
             inventory.push("Eyedrops");
-            $("#eyedrops").text("Eyedrops");
-            $("#eyedrops").attr("data-show","eyedrops");
         }else if(act == 6){
             inventory.push("P_Eyedrops");
+        }
+
+        if(inventory.includes("Note")){
+            $("#note").text("Code Note");
+            $("#note").attr("data-show","note");
+        }
+        if(inventory.includes("Frozen_Key")){
+            $("#key").text("Frozen Key");
+            $("#key").attr("data-show","frozen");
+        }
+        if(inventory.includes("Key")){
+            $("#key").text("Key");
+            $("#key").attr("data-show","key");
+        }
+        if(inventory.includes("Eyedrops")){
+            $("#eyedrops").text("Eyedrops");
+            $("#eyedrops").attr("data-show","eyedrops");
+        }
+        if(inventory.includes("P_Eyedrops")){
             $("#p_eyedrops").text("P. Eyedrops");
             $("#p_eyedrops").attr("data-show","p_eyedrops");
         }
-
 
         $.ajax({
             url: "/api/state",
