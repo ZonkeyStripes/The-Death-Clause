@@ -23,7 +23,7 @@ $(document).ready(function () {
         let newUser = {};
 
         if ($("#username").val()) {
-            newUser.username = $("#username").val().trim();
+            newUser.Username = $("#username").val().trim();
         }
 
         // validate passwords match
@@ -35,10 +35,12 @@ $(document).ready(function () {
             newUser.password = $("#password").val();
 
             $.post("/api/register",
-                newUser,
+                newUser).
+                then(
                 function (data) {
                     console.log("user registered", newUser);
                     console.log(data);
+                    window.location.replace("/game");
                 });
 
 
@@ -49,34 +51,35 @@ $(document).ready(function () {
     $("#login").click(function () {
         let user = {};
 
-        user.username = $("#username").val().trim();
+        user.Username = $("#username").val().trim();
         user.password = $("#password").val();
 
         console.log("login");
         console.log(user);
         
-        $.post("/api/login",
-        user,
-        function (data) {
-            console.log("user login", user);
-            console.log(data);
-        });
+        // $.post("/api/login",
+        // user,
+        // function (data) {
+        //     console.log("user login", user);
+        //     console.log(data);
+        // });
 
-        // $.ajax("/api/login/", {
-        //     type: "GET",
-        //     data: user
-        // }).then(
-        //     function (response) {
-        //         console.log("user log in attempt", user);
-        //         //send back to index or give feedback that registered
-        //         //   location.reload();
-        //         if (!response) {
-        //             alert("login failed");
-        //         } else {
-        //             console.log("logging in");
-        //         }
-        //     }
-        // );
+        $.ajax("/api/login/", {
+            type: "POST",
+            data: user
+        }).then(
+            function (response) {
+                console.log("user log in attempt", user);
+                //send back to index or give feedback that registered
+                //   location.reload();
+                if (!response) {
+                    alert("login failed");
+                } else {
+                    console.log("logging in");
+                    window.location.replace("/game");
+                }
+            }
+        );
     });
 
 });

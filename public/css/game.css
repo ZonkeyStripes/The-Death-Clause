@@ -131,3 +131,12 @@ svg{
     font-family: 'Courier Prime', monospace;
     font-weight: bold;   
 }
+
+.logout{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-family: 'Courier Prime', monospace;
+    text-decoration: none;
+    color: white;
+}

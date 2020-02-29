@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "compy386",
-    "database": "pointnclick",
+    "database": "deathClause",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
