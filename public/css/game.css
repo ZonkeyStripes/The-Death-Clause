@@ -3,13 +3,14 @@
     padding: 0; */
     box-sizing: border-box;
     
+    line-height: 1.5;
 }
 
 body{
     padding-top: 2.5vh;
     text-align: center;
     background-color: rgb(99, 99, 99);
-    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+    background-image: url("../images/soft-wallpaper.png");
     overflow: hidden;
 }
 
@@ -48,14 +49,15 @@ svg{
     grid-row: 1;
     grid-column: 8;
     
+    font-size: 3vw;
+    text-align: left;
     font-family: 'Courier Prime', monospace;
     color: white;
-    width: 20vw;
+    width: 60vw;
 }
 
-.inventory h1{
-    font-size: 3vw;
-}
+
+
 
 .plant{
     width: 8vw;

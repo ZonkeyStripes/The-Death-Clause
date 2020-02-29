@@ -11,7 +11,7 @@ body{
     text-align: center;
     background-color: black;
     color: white;
-    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+    background-image: url("../images/soft-wallpaper.png");
     /* downlaod bckgrd and re-host */
     overflow-x: hidden;
 }

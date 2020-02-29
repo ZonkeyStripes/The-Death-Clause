@@ -10,7 +10,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./js/dialogue.js"></script>
     <script type="text/javascript" src="./js/game.js"></script>
 
     <link rel="icon" type="image/x-icon" href="./images/cat.ico" />
@@ -57,29 +56,40 @@
         <div class="objects">
 
             <div class="inventory">
-                <h1>Inventory:</h1>
-                <ul id="invList" data-full="empty">
-
+                Inventory:
+                <ul id="invList">
+                    <li class="item" id="note"></li>
+                    <li class="item" id="key"></li>
+                    <li class="item" id="eyedrops"></li>
+                    <li class="item" id="p_eyedrops"></li>
                 </ul>
             </div>
-            <img src="./images/plant_alive.svg" alt="image of a plant" class="plant object " data-id="Plant" data-act="6">
-            <img src="./images/doorknob.svg" alt="closet doorknob" class="doorknob object" data-id="Closet" data-act="5">
+            
+
+            <img src="./images/plant_alive.svg" alt="image of a plant" class="plant object " data-id="Plant"
+                data-act="6">
+            <img src="./images/doorknob.svg" alt="closet doorknob" class="doorknob object" data-id="Closet"
+                data-act="5">
             <img src="./images/keypad.png" class="keypad object " data-id="Fridge" data-act="1" data-act2="3">
             <img src="./images/one-eye.svg" alt="man with an eye patch" class="oneEye object" data-id="James_Hooker">
             <img src="./images/woman.svg" alt="a woman" class="fiancee object" data-id="Penelope">
-            <img src="./images/suit.svg" alt="a man in a suit" class="brother object " data-id="Bank_Frankard" data-act="4">
+            <img src="./images/suit.svg" alt="a man in a suit" class="brother object " data-id="Bank_Frankard"
+                data-act="4">
             <img src="./images/frank.svg" alt="a man laying on the floor, dead" class="frank object"
                 data-id="Frank_Frankard" data-act="2">
             <img src="./images/tito.svg" alt="a black cat licking its paw" class="tito object" data-id="Tito">
 
-            <div class="modal"><div class="element"></div><p id="dismiss">(click to dismiss)</p></div>
+            <div class="modal">
+                <div class="element"></div>
+                <p id="dismiss">(click to dismiss)</p>
+            </div>
         </div>
 
     </div>
 
     <a class="logout" href="/logout">
         Logout
-      </a>
+    </a>
 
 </body>
 
