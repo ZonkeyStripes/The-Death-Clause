@@ -1,7 +1,6 @@
 $(document).ready(function () {
-    let inventory;
+    let inventory = [];
     let act = 0;
-    let killer = false;
 
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -105,6 +104,10 @@ $(document).ready(function () {
             changePlant();
         }
 
+        if($(this).attr("data-act") > 1 || $(this).attr("data-act2")){
+            updateInv();
+        }
+
         if($(this).attr("data-id") == "James_Hooker" && act == 7){
             act++;
         }
@@ -127,25 +130,47 @@ $(document).ready(function () {
     }
 
     function changePlant(){
-        // swap out images depending on act
+        if(act == 2){
+            $(".plant").attr("src","./images/plant_withered.svg");
+        }else if(act == 4){
+            $(".plant").attr("src","./images/plant_dead.svg");
+        }
     }
 
     function updateInv() {
+        if(act == 2){
+            inventory.push("Note");
+            $("#note").text("Code Note");
+            $("#note").attr("data-show","note");
+        }else if(act == 3){
+            inventory.push("Frozen_Key");
+            $("#key").text("Frozen Key");
+            $("#key").attr("data-show","frozen");
+        }else if(act == 4){
+            inventory[2] = "Key";
+            $("#key").empty();
+            $("#key").text("Key");
+            $("#key").attr("data-show","key");
+        }else if(act == 5){
+            inventory.push("Eyedrops");
+            $("#eyedrops").text("Eyedrops");
+            $("#eyedrops").attr("data-show","eyedrops");
+        }else if(act == 6){
+            inventory.push("P_Eyedrops");
+            $("#p_eyedrops").text("P. Eyedrops");
+            $("#p_eyedrops").attr("data-show","p_eyedrops");
+        }
+
+
         $.ajax({
             url: "/api/state",
             type: "PUT",
             data: {
-                inv: inventory,
+                inv: JSON.stringify(inventory),
                 act: act
-            },
-            success: function (result) {
-                // inventory = JSON.parse(result);
-                for (let i = 0; i < inventory.length - 1; i++) {
-                    let li = `<li data-id="{inventory[i]}">{inventory[i]}</li>`
-                    $("#invList").append(li);
-                }
             }
         });
+
     }
 
     $(".modal").click(function(){
