@@ -5,6 +5,15 @@ $(document).ready(function () {
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
+    $.get("/api/load", function(res){
+        if(res.isFulfilled){
+            inventory = res.inventory;
+            updateInv();
+            act = res.act;
+        }
+        console.log(res);
+    })
+
     let dialogue = {
         Frank_Frankard: [
             "That's Frank Frankard. Poor Bastard. I can't believe we didn't even notice until now.",

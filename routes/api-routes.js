@@ -40,6 +40,13 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
+  app.get("/api/load", function (req, res) {
+    let data = db.User.findOne({where:{Username: req.user.Username}});
+    console.log(data);
+    res.send(data);
+  });
+
+
   // Route for getting some data about our user to be used client side
 
   // app.post("/api/login/", passport.authenticate("local"), function(req, res) {
