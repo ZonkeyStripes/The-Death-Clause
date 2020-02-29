@@ -44,7 +44,11 @@ module.exports = function (app) {
   app.get("/api/load", function (req, res) {
     console.log("load");
     let data = db.User.findOne({where:{Username: req.user.Username}}).then(function(result){
-      res.send(result);
+      let save = {
+        inventory: result.inventory,
+        act: result.act
+      }
+      res.send(save);
     });
   });
 
