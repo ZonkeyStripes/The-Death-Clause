@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
     line-height: 1.5;
 }
 
-body{
+body {
     font-family: 'Courier Prime', monospace;
     text-align: center;
     background-color: black;
@@ -16,7 +16,7 @@ body{
     overflow-x: hidden;
 }
 
-.wrapper{
+.wrapper {
     width: 80%;
     margin: 0 auto;
 
@@ -26,18 +26,19 @@ body{
     width: 80%;
 } */
 
-.wrapper p{
+.wrapper p {
     font-size: 14pt;
 }
 
-.options{
+.options {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-top: 2%;
 }
 
-.reg, .log{
+.reg,
+.log {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,39 +49,43 @@ body{
     margin: 5% auto;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
     font-weight: bolder;
 }
 
-h1{
+h1 {
     font-size: 25pt;
     margin-top: 4%;
 }
 
-h2{
+h2 {
     font-size: large;
 }
 
-p, h3{
+p,
+h3 {
     font-size: 16pt;
     margin-top: 2%;
 }
 
 
-.newUser{
+.newUser {
     display: flex;
     flex-direction: column;
 }
 
-label{
+label {
     font-size: 14pt;
 }
 
-input, button{
+input,
+button {
     margin: 0 auto;
 }
 
-button{
+button {
     border: none;
     background-color: white;
     font-family: 'Courier Prime', monospace;
@@ -89,20 +94,20 @@ button{
     font-size: 12pt;
 }
 
-.newUser{
+.newUser {
     background-color: rgba(255, 255, 255, 0.192);
     padding: 2%;
 
 }
 
-.newUser #username{
+.newUser #username {
     margin-bottom: 2%;
 }
 
 
 /* media query breapoints here */
-@media only screen and (min-width: 600px){
-    .options{
+@media only screen and (min-width: 600px) {
+    .options {
         flex-direction: row;
     }
 }

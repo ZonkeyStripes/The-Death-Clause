@@ -1,24 +1,5 @@
 $(document).ready(function () {
 
-    //to-do
-    //check if landscape
-    // implement typed.js
-
-
-    // import Typed from 'typed.js';
-
-    // let options = {
-    //     strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
-    //     typeSpeed: 40
-    //   };
-
-    // let typed = new Typed('.element', options);
-
-    // register new user
-    // $(window).click(function(event){
-    //     console.log(event);
-    // })
-
     $("#register").click(function (event) {
         let newUser = {};
 
@@ -36,7 +17,7 @@ $(document).ready(function () {
 
             $.post("/api/register",
                 newUser).
-                then(
+            then(
                 function (data) {
                     console.log("user registered", newUser);
                     console.log(data);
@@ -56,13 +37,6 @@ $(document).ready(function () {
 
         console.log("login");
         console.log(user);
-        
-        // $.post("/api/login",
-        // user,
-        // function (data) {
-        //     console.log("user login", user);
-        //     console.log(data);
-        // });
 
         $.ajax("/api/login/", {
             type: "POST",

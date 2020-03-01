@@ -1,12 +1,12 @@
-*{
+* {
     /* margin: 0;
     padding: 0; */
     box-sizing: border-box;
-    
+
     line-height: 1.5;
 }
 
-body{
+body {
     padding-top: 2.5vh;
     text-align: center;
     background-color: rgb(99, 99, 99);
@@ -15,7 +15,7 @@ body{
 }
 
 
-.room{
+.room {
     position: relative;
     height: calc((9 * 82vw) /16);
     width: 82%;
@@ -24,13 +24,13 @@ body{
     overflow: hidden;
 }
 
-svg{
+svg {
     height: calc((9 * 82vw) /16);
     width: 100%;
     /* margin-left: calc(20% /2); */
 }
 
-.objects{
+.objects {
     position: absolute;
     top: 0;
     left: 0;
@@ -45,10 +45,10 @@ svg{
 
 }
 
-.inventory{
+.inventory {
     grid-row: 1;
     grid-column: 8;
-    
+
     font-size: 3vw;
     text-align: left;
     font-family: 'Courier Prime', monospace;
@@ -60,14 +60,14 @@ svg{
     grid-template-rows: 1;
 }
 
-#invList{
+#invList {
     display: flex;
     margin: 0;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.item{
+.item {
     list-style: none;
     text-indent: -9999px;
     width: 20%;
@@ -78,40 +78,41 @@ svg{
     background-position: center;
 }
 
-li[data-show="note"]{
+li[data-show="note"] {
     background-image: url("../images/note.svg");
 }
 
-li[data-show="frozen"]{
+li[data-show="frozen"] {
     background-image: url("../images/frozencube.svg");
 }
-li[data-show="key"]{
+
+li[data-show="key"] {
     background-image: url("../images/key.svg");
 }
 
-li[data-show="eyedrops"]{
+li[data-show="eyedrops"] {
     background-image: url("../images/eyedrops.svg");
 }
 
-li[data-show="p_eyedrops"]{
+li[data-show="p_eyedrops"] {
     background-image: url("../images/poison.svg");
 }
 
-.plant{
+.plant {
     width: 8vw;
     grid-column: 53;
     grid-row: 22;
 }
 
-.doorknob{
+.doorknob {
     width: 3vw;
-    
+
     grid-column: 61;
     grid-row: 25;
     transform: rotate(1deg);
 }
 
-.keypad{
+.keypad {
     width: 2.5vw;
 
     grid-column: 6;
@@ -119,41 +120,41 @@ li[data-show="p_eyedrops"]{
     /* transform: rotate(-2deg); */
 }
 
-.oneEye{
+.oneEye {
     width: 7vw;
 
     grid-column: 47;
     grid-row: 16;
 }
 
-.fiancee{
+.fiancee {
     width: 7.5vw;
 
     grid-column: 8;
     grid-row: 17;
 }
 
-.brother{
+.brother {
     width: 6.5vw;
 
     grid-column: 14;
     grid-row: 16;
 }
 
-.frank{
+.frank {
     width: 27vw;
     grid-column: 22;
     grid-row: 31;
 }
 
-.tito{
+.tito {
     width: 7.5vw;
 
     grid-column: 39;
     grid-row: 22;
 }
 
-.modal{
+.modal {
     display: none;
     width: 45vw;
     height: 30vh;
@@ -167,12 +168,12 @@ li[data-show="p_eyedrops"]{
     grid-row: 6;
 }
 
-.element{
+.element {
     font-family: 'Courier Prime', monospace;
-    font-weight: bold;   
+    font-weight: bold;
 }
 
-.logout{
+.logout {
     position: fixed;
     top: 10px;
     right: 10px;

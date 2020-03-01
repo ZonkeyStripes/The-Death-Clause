@@ -5,15 +5,13 @@ $(document).ready(function () {
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-    $.get("/api/load", function(res){
-        if(res.inventory){
+    $.get("/api/load", function (res) {
+        if (res.inventory) {
             inventory = JSON.parse(res.inventory);
-            console.log(inventory);
             updateInv();
             act = res.act;
-        console.log(res);
         }
-            
+
     })
 
     let dialogue = {
@@ -28,7 +26,7 @@ $(document).ready(function () {
             "No, Frank didn't kill himself and bury the poisoned eye drops in the plant."
         ],
         Plant: [
-            "A nice, hearty plant.", 
+            "A nice, hearty plant.",
             "Someone needs to water that thing.",
             "Sorry buddy, I only brought whiskey.",
             "That plant looks a little worse for wear.",
@@ -38,7 +36,7 @@ $(document).ready(function () {
             "The plant didn't kill Frank. It's another victim!"
         ],
         Closet: [
-            "That's the coat closet, it's locked.", 
+            "That's the coat closet, it's locked.",
             "This door needs a good, old-fashioned key to open.",
             "The fridge code does nothing here.",
             "I need something to melt the key before I can use it.",
@@ -48,7 +46,7 @@ $(document).ready(function () {
             "The person who killed Frank isn't in the closet."
         ],
         Fridge: [
-            "I still don't know how to get ice out of here. Is that a keypad?", 
+            "I still don't know how to get ice out of here. Is that a keypad?",
             "I need to find the code for the fridge",
             "You enter in the code and a single ice cube tumbles out. There's a key frozen inside!",
             "Nothing else in the fridge, Frank was a minimalist to the end.",
@@ -58,7 +56,7 @@ $(document).ready(function () {
             "No, technology didn't kill Frank."
         ],
         Tito: [
-            "Who's cat is this?", 
+            "Who's cat is this?",
             "'Meow'",
             "He purrs.",
             "'Do you know how to melt this key little kitty?', you say. He just stares.",
@@ -99,7 +97,7 @@ $(document).ready(function () {
         ]
     }
 
-    if(vh>vw){
+    if (vh > vw) {
         alert("This game is best played in landscape mode!");
     }
 
@@ -107,88 +105,88 @@ $(document).ready(function () {
         let name = $(this).attr("data-id");
         renderDialogue(dialogue[name][act]);
 
-        if($(this).attr("data-act") == act + 1){
+        if ($(this).attr("data-act") == act + 1) {
             act++;
             changePlant();
-        }else if($(this).attr("data-act2") == act + 1){
+        } else if ($(this).attr("data-act2") == act + 1) {
             act++;
             changePlant();
         }
 
-        if($(this).attr("data-act") > 1 || $(this).attr("data-act2")){
+        if ($(this).attr("data-act") > 1 || $(this).attr("data-act2")) {
             updateInv();
         }
 
-        if($(this).attr("data-id") == "James_Hooker" && act == 7){
+        if ($(this).attr("data-id") == "James_Hooker" && act == 7) {
             act++;
         }
     });
 
     // render responses in a modal using typed.js
-    function renderDialogue(dialogue){
-        
+    function renderDialogue(dialogue) {
+
         $(".element").empty();
-        $(".modal").css("display","block");
+        $(".modal").css("display", "block");
 
         let options = {
             strings: [dialogue],
             typeSpeed: 20,
             showCursor: false
         };
-    
+
         let typed = new Typed('.element', options);
 
     }
 
-    function changePlant(){
-        if(act == 2){
-            $(".plant").attr("src","./images/plant_withered.svg");
-        }else if(act == 4){
-            $(".plant").attr("src","./images/plant_dead.svg");
+    function changePlant() {
+        if (act == 2) {
+            $(".plant").attr("src", "./images/plant_withered.svg");
+        } else if (act == 4) {
+            $(".plant").attr("src", "./images/plant_dead.svg");
         }
     }
 
     function updateInv() {
         $("#note").empty();
-        $("#note").attr("data-show","");
+        $("#note").attr("data-show", "");
         $("#key").empty();
-        $("#key").attr("data-show","");
+        $("#key").attr("data-show", "");
         $("#eyedrops").empty();
-        $("#eyedrops").attr("data-show","");
+        $("#eyedrops").attr("data-show", "");
         $("#p_eyedrops").empty();
-        $("#p_eyedrops").attr("data-show","");
+        $("#p_eyedrops").attr("data-show", "");
 
-        if(act == 2){
+        if (act == 2) {
             inventory.push("Note");
-        }else if(act == 3){
+        } else if (act == 3) {
             inventory.push("Frozen_Key");
-        }else if(act == 4){
+        } else if (act == 4) {
             inventory[2] = "Key";
-        }else if(act == 5){
+        } else if (act == 5) {
             inventory.push("Eyedrops");
-        }else if(act == 6){
+        } else if (act == 6) {
             inventory.push("P_Eyedrops");
         }
 
-        if(inventory.includes("Note")){
+        if (inventory.includes("Note")) {
             $("#note").text("Code Note");
-            $("#note").attr("data-show","note");
+            $("#note").attr("data-show", "note");
         }
-        if(inventory.includes("Frozen_Key")){
+        if (inventory.includes("Frozen_Key")) {
             $("#key").text("Frozen Key");
-            $("#key").attr("data-show","frozen");
+            $("#key").attr("data-show", "frozen");
         }
-        if(inventory.includes("Key")){
+        if (inventory.includes("Key")) {
             $("#key").text("Key");
-            $("#key").attr("data-show","key");
+            $("#key").attr("data-show", "key");
         }
-        if(inventory.includes("Eyedrops")){
+        if (inventory.includes("Eyedrops")) {
             $("#eyedrops").text("Eyedrops");
-            $("#eyedrops").attr("data-show","eyedrops");
+            $("#eyedrops").attr("data-show", "eyedrops");
         }
-        if(inventory.includes("P_Eyedrops")){
+        if (inventory.includes("P_Eyedrops")) {
             $("#p_eyedrops").text("P. Eyedrops");
-            $("#p_eyedrops").attr("data-show","p_eyedrops");
+            $("#p_eyedrops").attr("data-show", "p_eyedrops");
         }
 
         $.ajax({
@@ -202,14 +200,14 @@ $(document).ready(function () {
 
     }
 
-    $(".modal").click(function(){
-        $(".modal").css("display","none");
-        if(act==6){
+    $(".modal").click(function () {
+        $(".modal").css("display", "none");
+        if (act == 6) {
             renderDialogue("You now have everything you need to name the killer! Click on who you think it was.");
             act++;
         }
 
-        if(act==8){
+        if (act == 8) {
             $("#dismiss").empty();
             renderDialogue("Congratulations! You found the killer. Now you all can call the police.");
         }

@@ -1,6 +1,6 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
+let db = require("../models");
+let passport = require("../config/passport");
 // const { Op } = require("sequelize");
 
 module.exports = function (app) {
@@ -40,10 +40,13 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
-  // MMAKE THIS NOT SEND BACK THE PASSWORD
   app.get("/api/load", function (req, res) {
     console.log("load");
-    let data = db.User.findOne({where:{Username: req.user.Username}}).then(function(result){
+    let data = db.User.findOne({
+      where: {
+        Username: req.user.Username
+      }
+    }).then(function (result) {
       let save = {
         inventory: result.inventory,
         act: result.act
@@ -51,19 +54,6 @@ module.exports = function (app) {
       res.send(save);
     });
   });
-
-
-  // Route for getting some data about our user to be used client side
-
-  // app.post("/api/login/", passport.authenticate("local"), function(req, res) {
-  //   // Sending back a password, even a hashed password, isn't a good idea
-  //   console.log(req.body);
-  //   res.json({
-  //     Username: req.user.Username,
-  //     id: req.user.id
-  //   });
-  //   res.redirect(307, "/api/game");
-  // });
 
   app.put("/api/state", function (req, res) {
     if (!req.user) {
