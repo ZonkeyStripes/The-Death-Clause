@@ -3,7 +3,6 @@ $(document).ready(function() {
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
-
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
@@ -11,7 +10,6 @@ $(document).ready(function() {
       Username: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-
     if (!userData.Username || !userData.password) {
       return;
     }
@@ -20,7 +18,6 @@ $(document).ready(function() {
     emailInput.val("");
     passwordInput.val("");
   });
-
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(Username, password) {
@@ -34,7 +31,6 @@ $(document).ready(function() {
       })
       .catch(handleLoginErr);
   }
-
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
